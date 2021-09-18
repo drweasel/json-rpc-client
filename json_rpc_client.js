@@ -101,7 +101,7 @@ var rpcClient = function() {
 			//"id" : id // id is added below
 		};
 
-		if (isObject(params) && !isEmpty(params)) {
+		if (!isUndefined(params)) {
 			message.params = params;
 		}
 
