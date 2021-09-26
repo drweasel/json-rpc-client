@@ -2,7 +2,7 @@
   "name": "json_rpc_client",
   "version": "1.0.0",
   "description": "JSON-RPC 2.0 client",
-  "main": "json_rpc_client.js",
+  "main": "index.js",
   "author": "Michael Weitzel <mich@elweitzel.de>",
   "license": "MIT",
   "private": true,

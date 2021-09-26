@@ -1,5 +1,6 @@
 // derived from: https://github.com/jershell/simple-jsonrpc-js
-'use strict'
+// @author Michael Weitzel <mich@elweitzel.de>, MIT license
+'use strict';
 
 var net = require('net'),
 	fs = require('fs'),
@@ -85,7 +86,7 @@ var ERRORS = {
 };
 
 
-var rpcClient = function() {
+var RpcClient = function() {
 	var self = this,
 		waitingframe = {},
 		id = 0,
@@ -189,8 +190,8 @@ var rpcClient = function() {
 	}
 
 	self.toStream = function(args) {
-		console.log('Need define the toStream method before use');
-		console.log(arguments);
+		console.error('Need define the toStream method before use; arguments were:');
+		console.error(arguments);
 	};
 
 	self.call = function(method, params) {
@@ -223,6 +224,8 @@ var rpcClient = function() {
 };
 
 module.exports = {
-	rpcClient: rpcClient
+    RpcClient: RpcClient
 };
+
+// vim: fenc=utf-8 et:
 

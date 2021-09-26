@@ -1,10 +1,10 @@
 var net = require('net'),
-	rpc = require('../json_rpc_client'),
+	rpc = require('../'),
 	client;
 
 const SOCKET_FILE = '/tmp/unix.sock';
 
-var jrpc = new rpc.rpcClient();
+var jrpc = new rpc.RpcClient();
 client = net.createConnection(SOCKET_FILE);
 
 jrpc.toStream = function(message) {
@@ -35,9 +35,15 @@ jrpc.call('echo_params', {"bla":"frupp"})
 	})
 	.catch(err => console.log(err));
 
-jrpc.call('notify', "willi")
+jrpc.call('get_output_status')
 	.then(function(result){
 		console.log("3: " + JSON.stringify(result));
+	})
+	.catch(err => console.log(err));
+
+jrpc.call('notify', "willi")
+	.then(function(result){
+		console.log("4: " + JSON.stringify(result));
 	})
 	.catch(err => console.log(err));
 
