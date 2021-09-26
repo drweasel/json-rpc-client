@@ -1,5 +1,5 @@
 // derived from: https://github.com/jershell/simple-jsonrpc-js
-// @author Michael Weitzel <mich@elweitzel.de>, MIT license
+// @author Michael Weitzel <mich at elweitzel.de>, MIT license
 'use strict';
 
 var net = require('net'),
